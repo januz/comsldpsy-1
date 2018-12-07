@@ -1,0 +1,111 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# comsldpsy
+
+This repository contains a reproducible research compendium for our
+paper:
+
+> Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J.,
+> Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities
+> between specific learning disorders and psychopathology: a study with
+> elementary school children in
+Germany*.
+
+<!-- Our pre-print is online here: -->
+
+<!-- > Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J., Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities between specific learning disorders and psychopathology: a study with elementary school children in Germany*. , Accessed 07 Dec 2018. Online at <> -->
+
+### How to cite
+
+Please cite this compendium as:
+
+> Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J.,
+> Hasselhorn, M., & Schulte-Körne, G., (2018). *Compendium of R code and
+> data for ‘Comorbidities between specific learning disorders and
+> psychopathology: a study with elementary school children in Germany’*.
+> Accessed 07 Dec 2018. Online at <http://doi.org/10.17605/OSF.IO/9MXP2>
+
+### Contents
+
+The compendium contains all data, code, and text associated with the
+paper. It is organized as follows:
+
+  - The `R/` directory contains all the R code.
+  - The `inst/analysis_dir/analysis/` directory contains 3 subfolders
+    with the following contents
+      - `data/`: the raw data
+      - `templates/`: the Microsoft word template used to prepare the
+        manuscript
+      - `manuscript/`: the manuscript as submitted
+
+### How to download or install
+
+There are several ways to use the compendium’s contents and reproduce
+the analysis:
+
+1.  One can *download the compendium as a zip archive* from from this
+    [GitHub repository](https://github/idea-labs/comsldpsy/master.zip)
+    or a registered/frozen version from the associated [OSF
+    project](https://osf.io/9mxp2/files).
+
+2.  One can *install the compendium as an R package* from GitHub using
+    the [`devtools`
+    package](https://cran.r-project.org/web/packages/devtools/index.html):
+    
+        install.packages("devtools")
+        devtools::install_github("idea-labs/comsldpsy")
+    
+      - This will install the R package locally including all its
+        dependencies.
+      - The package includes functions to
+          - check the analysis for consistency
+          - inspect the analysis pipeline and intermediate results
+          - reproduce the analysis results on the user’s computer
+      - For more details on how to use the package and its functions,
+        see [here](https://idea-labs.github.io/comsldpsy/).
+
+3.  One can *reproduce the analysis locally inside a
+    [Docker](https://www.docker.com/) container*. This allows to
+    replicate the exact computational environment used by the authors.
+    The compendium includes a Dockerfile that specifies how to build a
+    Docker image that contains all the software dependencies needed to
+    run the code and also includes the compendium’s R package, ready to
+    use. After [installing
+    Docker](https://docs.docker.com/install/#supported-platforms), one
+    can simply download the image and run the container using:
+    
+        docker run -p 8888:8888 idealabsffm/comsldpsy
+    
+      - This command will print a URL to the terminal.
+      - Copy this URL and paste it into a web browser.
+      - This will open a Jupyter Notebook.
+      - Start an interactive RStudio session in the browser by
+        selecting:
+
+<p align="center">
+
+<img src="img/rstudio-session.jpg"/>
+
+</p>
+
+<!-- ![](img/rstudio-session.jpg) -->
+
+4.  One can *reproduce the analysis in the cloud* without having to
+    install any software. The same Docker container replicating the
+    computational environment used by the authors can be run using
+    BinderHub on [mybinder.org](https://mybinder.org/):
+    
+      - Click
+        [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/idea-labs/comsldpsy/master?urlpath=rstudio)
+        to launch an interactive RStudio session in your web browser.
+
+### Licenses
+
+**Text and figures :**
+[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
+
+**Code :** See the [DESCRIPTION](DESCRIPTION) file
+
+**Data :** [CC-0](http://creativecommons.org/publicdomain/zero/1.0/)
+attribution requested in reuse
