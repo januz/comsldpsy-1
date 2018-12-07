@@ -1,0 +1,75 @@
+reference:
+- title: "Reproduce analysis"
+  desc: "Functions for reproducing and inspecting the analysis"
+  contents:
+  - get_plan
+  - reproduce_analysis
+  - copy_analysis
+  - delete_analysis
+- title: "Data preparation"
+  desc: "Functions to prepare raw data for analysis"
+  contents:
+  - transform_data
+  - combine_wrt
+  - recode_analyze
+  - recode_education_mother
+  - create_nationality
+  - create_psy_vars
+  - create_sld_vars
+  - filter_data
+- title: "Inferential statistics"
+  desc: "Functions for doing inferential statiscal analysis"
+  contents:
+  - fisher_test
+  - adj_inv_sinh_ci_or
+  - trend_test
+  - posthoc_test
+  - glm_poisson
+  - tidy_glm
+  - correct_mult_comp
+- title: "Tables"
+  desc: "Functions for preparing and adding tables for manuscript"
+  contents:
+  - add_table_1
+  - add_table_2
+  - add_table_3
+  - add_table_4
+  - add_table_all
+  - body_add_caption_table
+  - body_add_footnote
+- title: "Figures"
+  desc: "Functions for preparing and adding figures for manuscript"
+  contents:
+  - plot_figure_1
+  - plot_figure_2
+  - plot_figure_3
+  - add_figure_1
+  - add_figure_2
+  - add_figure_3
+  - add_figure_all
+  - body_add_caption_figure
+- title: "Manuscript text"
+  desc: "Functions for adding analyis results to the manuscript"
+  contents:
+  - add_text
+  - add_text_descriptives
+  - get_mean_ci
+  - add_text_exclusion
+  - count_filter
+  - count_filter_results
+  - add_text_fisher
+  - report_fisher_or
+  - add_text_trend
+  - report_trend_sign
+  - report_trend_or
+  - add_text_posthoc
+  - report_posthoc
+  - add_text_poisson
+  - report_poisson
+- title: "Utility functions"
+  contents:
+  - get_n_perc_filter
+  - get_percent
+
+
+

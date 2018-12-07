@@ -1,0 +1,119 @@
+---
+title: "How to use this research compendium"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+pkgenv <- comsldpsy::export_pkgenv()
+```
+
+This research compendium comprises all the input and output files as well as the R code needed to reproduce our `r pkgenv$product`:
+
+> `r pkgenv$authors` (`r pkgenv$year`). *`r pkgenv$title`*. `r pkgenv$journal` `r pkgenv$doi_published`
+
+The compendium uses the R package `drake` to define a reproducible processing pipeline linking inputs to outputs/targets similar to `GNU make` (for more information on the `drake` package, see [here](https://ropensci.github.io/drake/)). This vignette describes how to reproduce the analysis, check the analysis pipeline, and inspect analysis steps and outputs.
+
+## Copy the analysis directory structure
+
+```{r}
+library(comsldpsy)
+copy_analysis()
+```
+
+After attaching the package, executing the function `copy_analysis()` copies the analysis directory structure  to the current working directory (or an explicitely specified directory). The directory should now contain the following files:
+
+```
+.
+└── .drake
+    └── [...]
+└── analysis
+    ├── data
+    │   └── data_orig.rds             # raw data
+    ├── manuscript
+    │   └── manuscript.docx           # manuscript as submitted
+    └── templates
+        └── manuscript_template.docx  # manuscript template
+```
+
+These files represent all input files required to reproduce the analysis as well as all output files generated in the process. The function further copies a `.drake` directory to the same directory. This hidden directory stores information about the consistency of the analysis pipeline and all intermediate outputs.
+
+## Reproduce the analysis
+
+Reproducing the analysis can be done in a two-step procedure:
+
+1. Executing the function `reproduce_analysis()` copies the analysis directory structure (if it isn't already present) and then runs `drake::make()`. The output provides evidence of reproducibility without actually re-running the analysis. If the analysis is reproducible, the output should look like this:
+
+    ```{r}
+    reproduce_analysis()
+    ```
+
+2. To independently re-create the analysis results on ones own computer, one can run `reproduce_analysis()` with the option `re_run = TRUE`. This will delete the copied `.drake` folder and re-run the entire analysis from scratch, re-creating all relevant intermediate steps and outputs.
+
+    ```{r,eval=FALSE}
+    reproduce_analysis(re_run = TRUE)
+    #> Reproducing analysis included in package 'comsldpsy':
+    #> Analysis directory structure is already in place.
+    #> Re-running analysis from scratch...
+    #> target data_raw
+    #> target manuscript_in
+    #> target data_transformed
+    #> target data_filtered
+    #> [...]
+    #> target manuscript_text
+    #> target manuscript_tables
+    #> target manuscript_figures
+    #> target manuscript_out
+    ```
+    
+## Explore the analysis pipeline and results
+
+Executing `get_plan()` returns the underlying `drake` plan used to run the analysis. The returned data frame lists all intermediate results (targets), the commands executed to create them, and the dependencies between them.
+
+```{r}
+plan <- get_plan()
+plan
+```
+
+The `drake` package provides  [several ways](https://ropenscilabs.github.io/drake-manual/vis.html) to visualize the analysis pipeline, e.g.
+
+```{r, out.width = "80%"}
+config <- drake_config(plan)
+vis_drake_graph(config)
+```
+
+Furthermore, `drake` provides functions for viewing individual targets (`drake::readd()`) or load them into the current environment (`drake::loadd()`).
+
+For example, to view the cleaned data set, use:
+
+```{r}
+readd(data_filtered)
+```
+
+to view the results of the poisson regression model, use:
+
+```{r}
+readd(df_poisson)
+```
+
+or, to view one of the figures included in the `r pkgenv$product`, use:
+
+```{r, fig.width = 5, fig.height = 4}
+readd(figure_3)
+```
+
+## Cleaning up
+
+Executing `delete_analysis()` removes the `analysis` and `.drake` directories from the working directory (or an explicitely specified directory).
+
+```{r}
+delete_analysis()
+```

@@ -1,0 +1,92 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+
+# load development package
+devtools::load_all(getwd())
+pkgenv <- export_pkgenv()
+```
+
+# comsldpsy
+
+This repository contains a reproducible research compendium for our `r pkgenv$product`:
+
+> `r pkgenv$authors` (`r pkgenv$year`). *`r pkgenv$title`*. `r pkgenv$journal` `r pkgenv$doi_published`
+
+<!-- Our pre-print is online here: -->
+
+<!-- > `r pkgenv$authors` (`r pkgenv$year`). *`r pkgenv$title`*. `r pkgenv$journal`, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at `r pkgenv$doi_preprint` -->
+
+### How to cite
+
+Please cite this compendium as:
+
+> `r pkgenv$authors`, (`r format(Sys.Date(), "%Y")`). *Compendium of R code and data for '`r pkgenv$title`'*. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at `r pkgenv$doi_osf`
+
+### Contents
+
+The compendium contains all data, code, and text associated with the `r pkgenv$product`. It is organized as follows:
+
+- The `R/` directory contains all the R code.
+- The `inst/analysis_dir/analysis/` directory contains 3 subfolders with the following contents
+  - `data/`: the raw data
+  - `templates/`: the Microsoft word template used to prepare the manuscript
+  - `manuscript/`: the manuscript as submitted
+
+### How to download or install
+
+There are several ways to use the compendium's contents and reproduce the analysis:
+
+1. One can *download the compendium as a zip archive* from from this [GitHub repository](https://github/`r pkgenv$url_github`/master.zip) or a registered/frozen version from the associated [OSF project](`r pkgenv$url_osf`files).
+
+2. One can *install the compendium as an R package* from GitHub using the [`devtools` package](https://cran.r-project.org/web/packages/devtools/index.html):
+
+    ```
+    install.packages("devtools")
+    devtools::install_github("`r pkgenv$url_github`")
+    ```
+  
+    - This will install the R package locally including all its dependencies.
+    - The package includes functions to
+      - check the analysis for consistency
+      - inspect the analysis pipeline and intermediate results
+      - reproduce the analysis results on the user's computer
+    - For more details on how to use the package and its functions, see [here](https://idea-labs.github.io/`r pkgenv$pkg_name`/).
+
+3. One can *reproduce the analysis locally inside a [Docker](https://www.docker.com/) container*. This allows to replicate the exact computational environment used by the authors. The compendium includes a Dockerfile that specifies how to build a Docker image that contains all the software dependencies needed to run the code and also includes the compendium's R package, ready to use. After [installing Docker](https://docs.docker.com/install/#supported-platforms), one can simply download the image and run the container using:
+
+    ```
+    docker run -p 8888:8888 `r pkgenv$url_docker`
+    ```
+    
+    - This command will print a URL to the terminal.
+    - Copy this URL and paste it into a web browser.
+    - This will open a Jupyter Notebook.
+    - Start an interactive RStudio session in the browser by selecting:
+    
+<p align="center">
+  <img src="img/rstudio-session.jpg"/>
+</p>
+
+<!-- ![](img/rstudio-session.jpg) -->
+
+4. One can *reproduce the analysis in the cloud* without having to install any software. The same Docker container replicating the computational environment used by the authors can be run using BinderHub on [mybinder.org](https://mybinder.org/):
+
+    - Click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/`r pkgenv$url_github`/master?urlpath=rstudio) to launch an interactive RStudio session in your web browser.
+
+### Licenses
+
+**Text and figures :**  [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
+
+**Code :** See the [DESCRIPTION](DESCRIPTION) file
+
+**Data :** [CC-0](http://creativecommons.org/publicdomain/zero/1.0/) attribution requested in reuse
