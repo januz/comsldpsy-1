@@ -42,7 +42,7 @@ export_pkgenv <- function() {
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage(
     "Attaching package: '", pkgenv$pkg_name, "'\n\n",
-    "The package provides data and analysis code for our", pkgenv$product, ":\n\n",
+    "The package provides data and analysis code for our ", pkgenv$product, ":\n\n",
     pkgenv$authors, " (", pkgenv$year, "). ", pkgenv$title, ".",
     pkgenv$journal, " ", pkgenv$doi_published, "\n\n",
     "To reproduce the analysis, run `reproduce_analysis()`",
