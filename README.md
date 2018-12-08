@@ -14,7 +14,7 @@ Germany*.
 
 <!-- Our pre-print is online here: -->
 
-<!-- > Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J., Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities between specific learning disorders and psychopathology: a study with elementary school children in Germany*. , Accessed 07 Dec 2018. Online at <> -->
+<!-- > Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J., Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities between specific learning disorders and psychopathology: a study with elementary school children in Germany*. , Accessed 07 Dec 2018. Online at  -->
 
 ### How to cite
 
@@ -45,7 +45,8 @@ There are several ways to use the compendium’s contents and reproduce
 the analysis:
 
 1.  One can *download the compendium as a zip archive* from from this
-    [GitHub repository](https://github/idea-labs/comsldpsy/master.zip)
+    [GitHub
+    repository](https://github.com/idea-labs/comsldpsy/archive/master.zip)
     or a registered/frozen version from the associated [OSF
     project](https://osf.io/9mxp2/files).
 
@@ -63,7 +64,8 @@ the analysis:
           - inspect the analysis pipeline and intermediate results
           - reproduce the analysis results on the user’s computer
       - For more details on how to use the package and its functions,
-        see [here](https://idea-labs.github.io/comsldpsy/).
+        see
+        [here](https://idea-labs.github.io/comsldpsy/articles/comsldpsy.html).
 
 3.  One can *reproduce the analysis locally inside a
     [Docker](https://www.docker.com/) container*. This allows to
@@ -88,8 +90,6 @@ the analysis:
 <img src="img/rstudio-session.jpg"/>
 
 </p>
-
-<!-- ![](img/rstudio-session.jpg) -->
 
 4.  One can *reproduce the analysis in the cloud* without having to
     install any software. The same Docker container replicating the
