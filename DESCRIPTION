@@ -1,12 +1,12 @@
 Package: comsldpsy
-Title: Code and Data for Paper by Visser et. al
+Title: Data and analysis code for Visser et. al (submitted)
 Version: 0.1.0
 Authors@R:
     person(given = "Janosch",
            family = "Linkersdörfer",
            role = c("aut", "cre"),
            email = "linkersdoerfer@mailbox.org")
-Description: Provides analysis code and data for Visser et. al
+Description: Provides data and analysis code for Visser et. al (submitted)
 License: MIT + file LICENSE
 ByteCompile: true
 Encoding: UTF-8
