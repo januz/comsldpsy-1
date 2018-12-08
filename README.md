@@ -14,7 +14,7 @@ Germany*.
 
 <!-- Our pre-print is online here: -->
 
-<!-- > Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J., Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities between specific learning disorders and psychopathology: a study with elementary school children in Germany*. , Accessed 07 Dec 2018. Online at  -->
+<!-- > Visser, L., Kalmar, J., Görgen, R., Linkersdörfer, J., Rothe, J., Hasselhorn, M., & Schulte-Körne, G. (submitted). *Comorbidities between specific learning disorders and psychopathology: a study with elementary school children in Germany*. , Accessed 08 Dec 2018. Online at  -->
 
 ### How to cite
 
@@ -24,7 +24,7 @@ Please cite this compendium as:
 > Hasselhorn, M., & Schulte-Körne, G., (2018). *Compendium of R code and
 > data for ‘Comorbidities between specific learning disorders and
 > psychopathology: a study with elementary school children in Germany’*.
-> Accessed 07 Dec 2018. Online at <http://doi.org/10.17605/OSF.IO/9MXP2>
+> Accessed 08 Dec 2018. Online at <http://doi.org/10.17605/OSF.IO/9MXP2>
 
 ### Contents
 
@@ -44,14 +44,13 @@ paper. It is organized as follows:
 There are several ways to use the compendium’s contents and reproduce
 the analysis:
 
-1.  One can *download the compendium as a zip archive* from from this
-    [GitHub
+  - *Download the compendium as a zip archive* from from this [GitHub
     repository](https://github.com/idea-labs/comsldpsy/archive/master.zip)
     or a registered/frozen version from the associated [OSF
     project](https://osf.io/9mxp2/files).
 
-2.  One can *install the compendium as an R package* from GitHub using
-    the [`devtools`
+  - *Install the compendium as an R package* from GitHub using the
+    [`devtools`
     package](https://cran.r-project.org/web/packages/devtools/index.html):
     
         install.packages("devtools")
@@ -67,7 +66,7 @@ the analysis:
         see
         [here](https://idea-labs.github.io/comsldpsy/articles/comsldpsy.html).
 
-3.  One can *reproduce the analysis locally inside a
+  - *Reproduce the analysis locally inside a
     [Docker](https://www.docker.com/) container*. This allows to
     replicate the exact computational environment used by the authors.
     The compendium includes a Dockerfile that specifies how to build a
@@ -91,10 +90,10 @@ the analysis:
 
 </p>
 
-4.  One can *reproduce the analysis in the cloud* without having to
-    install any software. The same Docker container replicating the
-    computational environment used by the authors can be run using
-    BinderHub on [mybinder.org](https://mybinder.org/):
+  - *Reproduce the analysis in the cloud* without having to install any
+    software. The same Docker container replicating the computational
+    environment used by the authors can be run using BinderHub on
+    [mybinder.org](https://mybinder.org/):
     
       - Click
         [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/idea-labs/comsldpsy/master?urlpath=rstudio)
