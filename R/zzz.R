@@ -19,7 +19,7 @@ pkgenv <- new.env(parent = emptyenv())
   pkgenv[["year"]] <- "submitted"
   pkgenv[["journal"]] <- ""
   pkgenv[["doi_published"]] <- ""
-  pkgenv[["doi_preprint"]] <- "<>"
+  pkgenv[["doi_preprint"]] <- ""
   pkgenv[["doi_osf"]] <- "http://doi.org/10.17605/OSF.IO/9MXP2"
   pkgenv[["url_osf"]] <- "https://osf.io/9mxp2/"
   pkgenv[["url_github"]] <- "idea-labs/comsldpsy"
@@ -42,7 +42,7 @@ export_pkgenv <- function() {
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage(
     "Attaching package: '", pkgenv$pkg_name, "'\n\n",
-    "The package provides data and analysis code for our paper\n",
+    "The package provides data and analysis code for our", pkgenv$product, ":\n\n",
     pkgenv$authors, " (", pkgenv$year, "). ", pkgenv$title, ".",
     pkgenv$journal, " ", pkgenv$doi_published, "\n\n",
     "To reproduce the analysis, run `reproduce_analysis()`",
