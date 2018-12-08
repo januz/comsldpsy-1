@@ -46,7 +46,7 @@ The compendium contains all data, code, and text associated with the `r pkgenv$p
 
 There are several ways to use the compendium's contents and reproduce the analysis:
 
-1. One can *download the compendium as a zip archive* from from this [GitHub repository](https://github/`r pkgenv$url_github`/master.zip) or a registered/frozen version from the associated [OSF project](`r pkgenv$url_osf`files).
+1. One can *download the compendium as a zip archive* from from this [GitHub repository](https://github.com/`r pkgenv$url_github`/archive/master.zip) or a registered/frozen version from the associated [OSF project](`r pkgenv$url_osf`files).
 
 2. One can *install the compendium as an R package* from GitHub using the [`devtools` package](https://cran.r-project.org/web/packages/devtools/index.html):
 
@@ -60,7 +60,7 @@ There are several ways to use the compendium's contents and reproduce the analys
       - check the analysis for consistency
       - inspect the analysis pipeline and intermediate results
       - reproduce the analysis results on the user's computer
-    - For more details on how to use the package and its functions, see [here](https://idea-labs.github.io/`r pkgenv$pkg_name`/).
+    - For more details on how to use the package and its functions, see [here](https://idea-labs.github.io/`r pkgenv$pkg_name`/articles/`r pkgenv$pkg_name`.html).
 
 3. One can *reproduce the analysis locally inside a [Docker](https://www.docker.com/) container*. This allows to replicate the exact computational environment used by the authors. The compendium includes a Dockerfile that specifies how to build a Docker image that contains all the software dependencies needed to run the code and also includes the compendium's R package, ready to use. After [installing Docker](https://docs.docker.com/install/#supported-platforms), one can simply download the image and run the container using:
 
@@ -76,8 +76,6 @@ There are several ways to use the compendium's contents and reproduce the analys
 <p align="center">
   <img src="img/rstudio-session.jpg"/>
 </p>
-
-<!-- ![](img/rstudio-session.jpg) -->
 
 4. One can *reproduce the analysis in the cloud* without having to install any software. The same Docker container replicating the computational environment used by the authors can be run using BinderHub on [mybinder.org](https://mybinder.org/):
 
