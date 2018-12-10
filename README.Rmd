@@ -46,7 +46,9 @@ The compendium contains all data, code, and text associated with the `r pkgenv$p
 
 There are several ways to use the compendium's contents and reproduce the analysis:
 
--  **Download the compendium as a zip archive** from from this [GitHub repository](https://github.com/`r pkgenv$url_github`/archive/master.zip) or a registered/frozen version from the associated [OSF project](`r pkgenv$url_osf`files).
+-  **Download the compendium as a zip archive** from this [GitHub repository](https://github.com/`r pkgenv$url_github`/archive/master.zip) or a registered/frozen version from the associated [OSF project](`r pkgenv$url_osf`files) (click on "GitHub: ...", then select "Download as zip").
+
+    - After unpacking the downloaded zip archive, you can explore the files on your computer.
 
 - **Install the compendium as an R package** from GitHub using the [`devtools` package](https://cran.r-project.org/web/packages/devtools/index.html):
 
