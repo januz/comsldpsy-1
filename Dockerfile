@@ -1,4 +1,4 @@
-FROM rocker/verse:3.5.0
+FROM rocker/geospatial:3.5.0
 
 # required
 MAINTAINER Janosch Linkersdörfer <linkersdoerfer@mailbox.org>
