@@ -41,5 +41,7 @@ Imports:
     tidyr,
     UpSetR,
     zeallot
+Suggests:
+    visNetwork
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0
